@@ -53,7 +53,7 @@ namespace EnhancedFramework.Conversations {
                     return base.Text;
                 }
 
-                return conversation.name.Replace(conversation.name.GetPrefix(), string.Empty);
+                return conversation.name.RemovePrefix();
             }
             set {
                 if (conversation == null) {

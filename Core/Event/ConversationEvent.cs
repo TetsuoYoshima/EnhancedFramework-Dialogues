@@ -176,7 +176,7 @@ namespace EnhancedFramework.Conversations {
         /// <summary>
         /// All events contained in this group.
         /// </summary>
-        [SerializeField, DisplayName("Name", true)] private BlockArray<T> events = new BlockArray<T>();
+        [SerializeField, DisplayName(nameof(Name), true)] private BlockArray<T> events = new BlockArray<T>();
 
         /// <summary>
         /// Displayed name of this group.

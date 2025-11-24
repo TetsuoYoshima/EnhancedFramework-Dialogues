@@ -13,6 +13,7 @@ using System.IO;
 using System.Reflection;
 using UnityEditor;
 using UnityEditor.AnimatedValues;
+using UnityEditor.Presets;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -128,7 +129,7 @@ namespace EnhancedFramework.Conversations.Editor {
                 if (_selection is Conversation _conversation) {
 
                     // Update selection.
-                    SetConversation(_conversation);
+                    SetConversation(_conversation, false);
                 }
                 else if (conversation != null) {
 
@@ -240,7 +241,7 @@ namespace EnhancedFramework.Conversations.Editor {
                         Conversation _asset = AssetDatabase.LoadAssetAtPath<Conversation>(_file.Remove(0, EnhancedEditorUtility.GetProjectPath().Length));
 
                         if (_asset != null) {
-                            SetConversation(_asset);
+                            SetConversation(_asset, true);
                         }
                     }
                 }
@@ -250,10 +251,17 @@ namespace EnhancedFramework.Conversations.Editor {
                     string _file = EditorUtility.SaveFilePanelInProject(NewFileTitle, NewFileDefaultName, FileExtension, NewFileMessage, GetFolderPath());
 
                     if (!string.IsNullOrEmpty(_file)) {
-                        SetConversation(CreateInstance<Conversation>());
+                        Conversation _newConversation = CreateInstance<Conversation>();
 
-                        AssetDatabase.CreateAsset(conversation, _file);
+                        AssetDatabase.CreateAsset(_newConversation, _file);
                         AssetDatabase.Refresh();
+
+                        Preset[] _presets = Preset.GetDefaultPresetsForObject(_newConversation);
+                        if (_presets.SafeFirst(out Preset _preset)) {
+                            _preset.ApplyTo(_newConversation);
+                        }
+
+                        SetConversation(_newConversation, true);
                     }
                 }
 
@@ -1158,7 +1166,13 @@ namespace EnhancedFramework.Conversations.Editor {
         /// <summary>
         /// Sets this window editing conversation.
         /// </summary>
-        public void SetConversation(Conversation _conversation) {
+        public void SetConversation(Conversation _conversation, bool _select = false) {
+
+            if (_select && (_conversation != conversation)) {
+                Selection.activeObject = _conversation;
+                EditorGUIUtility.PingObject(_conversation);
+            }
+
             conversation = _conversation;
             scroll = Vector2.zero;
 
