@@ -1,9 +1,9 @@
-# Enhanced Framework - Conversations - Enhanced Engine, Part IV
+# Enhanced Framework - Dialogues - Enhanced Engine, Part IV
 
 This repository is part of the "Enhanced Engine", an advanced collection of systems for the [Unity](https://unity.com/) game engine.
 
 
-The "Enhanced Framework - Dialogues" features an advanced conversation editor along with the associated runtime classes and framework. <br/>
+The "Enhanced Framework - Dialogues" features an advanced dialogue editor along with the associated runtime classes and framework. <br/>
 
 ### WARNING - Enhanced Editor required
 This library requires you to first install the first part of the Enhanced Engine, which you can find [here](https://github.com/LucasJoestar/EnhancedEditor/).
