@@ -1,0 +1,20 @@
+{
+    "name": "EnhancedFramework.Dialogues.PlayMaker",
+    "rootNamespace": "EnhancedFramework.Dialogues.PlayMaker",
+    "references": [
+        "EnhancedEditor",
+        "EnhancedFramework.Core",
+        "EnhancedFramework.Dialogues"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "PLAYMAKER"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

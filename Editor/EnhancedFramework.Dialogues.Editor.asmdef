@@ -1,0 +1,29 @@
+{
+    "name": "EnhancedFramework.Dialogues.Editor",
+    "rootNamespace": "EnhancedFramework.Dialogues.Editor",
+    "references": [
+        "EnhancedEditor",
+        "EnhancedEditor.Editor",
+        "EnhancedFramework.Core",
+        "EnhancedFramework.Dialogues",
+        "Unity.Localization",
+        "Unity.Localization.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.localization",
+            "expression": "",
+            "define": "LOCALIZATION_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

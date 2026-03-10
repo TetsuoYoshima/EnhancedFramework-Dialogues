@@ -1,0 +1,28 @@
+{
+    "name": "EnhancedFramework.Dialogues.Timeline",
+    "rootNamespace": "EnhancedFramework.Dialogues.Timeline",
+    "references": [
+        "EnhancedEditor",
+        "EnhancedFramework.Core",
+        "EnhancedFramework.Dialogues",
+        "EnhancedFramework.Timeline",
+        "Unity.Timeline"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "TIMELINE_ENABLED"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.timeline",
+            "expression": "",
+            "define": "TIMELINE_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}
